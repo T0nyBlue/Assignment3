@@ -23,13 +23,13 @@ exports.createMusic = (req, res) => {
     const music = req.body;
     const musicId = uuidv4();
     musics.push({id: musicId,...music});
-    res.send(`Music named ${music.SongName} was added to list!`);
+    res.status(200).send(`Music named ${music.SongName} was added to list!`);
 };
 
 exports.getMusic = (req,res) =>{
     const {musicId} = req.params;
     const music = musics.find((music) => music.id === musicId);
-    res.send(music);
+    res.status(200).send(music);
 };
 
 exports.updateMusic = (req, res) => {
@@ -45,12 +45,12 @@ exports.updateMusic = (req, res) => {
     if(Singer){
         music.Singer = Singer;
     };
-    res.send(`Music named ${SongName} was updated!`);
+    res.status(200).send(`Music has id ${musicId} was updated!`);
 };
 
 exports.deleteMusic = (req, res) => {
     const {musicId} = req.params;
     // delete musics[{musicId}];
     musics = musics.filter((music) => music.id !== musicId);
-    res.send(`Music id ${musicId} was remove from musics list!`);
+    res.status(200).send(`Music id ${musicId} was remove from musics list!`);
 };

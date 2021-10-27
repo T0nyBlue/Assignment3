@@ -12,10 +12,10 @@ const options = {
     swaggerDefinition: {
       openapi: "3.0.0",
       info: {
-        title: "Musics Management API",
+        title: "18521123 - Assignment 3",
         version: "1.0.0",
         description:
-          "Musics API document for Music management",
+          "Document for Music Management API",
         contact: {
           name: "Bao Nam",
           url: "https://github.com/T0nyBlue",
