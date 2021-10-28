@@ -53,4 +53,4 @@ app.get('/', (req, res) => {
 
 musicsRoutes(app);
 
-app.listen(port, () => console.log(`Server running on por: http://localhost:${port}`));
+app.listen(port, () => console.log(`Server running on port: http://localhost:${port}`));

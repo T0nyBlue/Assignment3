@@ -22,8 +22,14 @@ exports.getMusicsList = (req, res) => {
 exports.createMusic = (req, res) => {
     const music = req.body;
     const musicId = uuidv4();
-    musics.push({id: musicId,...music});
-    res.status(200).send(`Music named ${music.SongName} was added to list!`);
+    if(music.SongName)
+    {
+        musics.push({id: musicId,...music});
+        res.status(200).send(`Music named ${music.SongName} was added to list!`);
+    } else {
+        res.status(500).send(`Music needs to have name!`);
+    };
+    
 };
 
 exports.getMusic = (req,res) =>{
