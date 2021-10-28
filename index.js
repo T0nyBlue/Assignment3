@@ -8,8 +8,7 @@ require('dotenv').config();
 
 const app = express();
 
-let port = process.env.PORT;
-let host = process.env.HOST;
+let port = process.env.PORT || 3636;
 
 const options = {
     swaggerDefinition: {
@@ -25,11 +24,11 @@ const options = {
           email: "18521123@gm.uit.edu.vn"
         }
       },
-      servers: [
-        {
-          url: "http://localhost:3636/"
-        }
-      ]
+      // servers: [
+      //   {
+      //     url: "http://localhost:3636/"
+      //   }
+      // ]
     },
     apis: ["./api-method-docs.js"]
 }
@@ -56,4 +55,4 @@ app.get('/', (req, res) => {
 
 musicsRoutes(app);
 
-app.listen(port, host, () => console.log(`Server running on port: ${host}:${port}`));
+app.listen(port, () => console.log(`Server running on port: ${port}`));
