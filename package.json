@@ -18,12 +18,11 @@
     "url": "https://github.com/T0nyBlue/Assignment3/issues"
   },
   "homepage": "https://github.com/T0nyBlue/Assignment3#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.14"
-  },
+  "devDependencies": {},
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "nodemon": "^2.0.14",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
     "uuid": "^8.3.2"
