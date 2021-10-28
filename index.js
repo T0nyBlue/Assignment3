@@ -4,9 +4,12 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerJsondoc = require("swagger-jsdoc");
 
 const musicsRoutes = require('./src/routes/musicsRoutes.js');
+require('dotenv').config();
 
 const app = express();
-const port = 3636;
+
+let port = process.env.PORT;
+let host = process.env.HOST;
 
 const options = {
     swaggerDefinition: {
@@ -53,4 +56,4 @@ app.get('/', (req, res) => {
 
 musicsRoutes(app);
 
-app.listen(port, () => console.log(`Server running on port: http://localhost:${port}`));
+app.listen(port, host, () => console.log(`Server running on port: ${host}:${port}`));
