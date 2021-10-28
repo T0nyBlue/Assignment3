@@ -29,7 +29,6 @@ exports.createMusic = (req, res) => {
     } else {
         res.status(500).send(`Music needs to have name!`);
     };
-    
 };
 
 exports.getMusic = (req,res) =>{
@@ -40,8 +39,7 @@ exports.getMusic = (req,res) =>{
         res.status(200).send(music);
     }else {
         res.status(500).send(`Do not have music with id: '${musicId}' in Musics List!`);
-    }
-
+    };
 };
 
 exports.updateMusic = (req, res) => {
@@ -62,7 +60,7 @@ exports.updateMusic = (req, res) => {
         res.status(200).send(`Music has id: '${musicId}' was updated!`);
     } else {
         res.status(500).send(`Do not have music with id: '${musicId}' in Musics List`);
-    }
+    };
 
 };
 
@@ -76,6 +74,5 @@ exports.deleteMusic = (req, res) => {
         res.status(200).send(`Music id: '${musicId}' was remove from musics list!`);
     }else{
         res.status(500).send(`Do not have music with id: '${musicId}' in Musics List`);
-    }
-
+    };
 };
