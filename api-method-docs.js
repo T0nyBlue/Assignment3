@@ -37,7 +37,7 @@
  *   post:
  *     tags:
  *       - Musics List
- *     summary: Add Music To List
+ *     summary: Add Music To Musics List
  *     description: Add a new music to musics list
  *     requestBody:
  *          required: true
@@ -101,7 +101,7 @@
  *   patch:
  *     tags:
  *       - Music
- *     summary: Add Music To List
+ *     summary: Update Music In Musics List
  *     description: Add a new music to musics list
  *     parameters:
  *       - name: musicId
@@ -126,14 +126,14 @@
  *                              example: Avicii
  *     responses:
  *       200:
- *         description: Successfully added
+ *         description: Successfully updated
  *       500:
  *         description: Server error
  * 
  *   delete:
  *     tags:
  *       - Music
- *     summary: Delete Music from List
+ *     summary: Delete Music From Musics List
  *     description: Deletes music
  *     produces:
  *       - application/json

@@ -35,28 +35,47 @@ exports.createMusic = (req, res) => {
 exports.getMusic = (req,res) =>{
     const {musicId} = req.params;
     const music = musics.find((music) => music.id === musicId);
-    res.status(200).send(music);
+    if(music)
+    {
+        res.status(200).send(music);
+    }else {
+        res.status(500).send(`Do not have music with id: '${musicId}' in Musics List!`);
+    }
+
 };
 
 exports.updateMusic = (req, res) => {
     const {musicId} = req.params;
     const {SongName, Author, Singer} = req.body;
     const music = musics.find((music) => music.id === musicId);
-    if(SongName){
-        music.SongName = SongName;
+    if(music)
+    {
+        if(SongName){
+            music.SongName = SongName;
+        }
+        if(Author){
+            music.Author = Author;
+        }
+        if(Singer){
+            music.Singer = Singer;
+        };
+        res.status(200).send(`Music has id: '${musicId}' was updated!`);
+    } else {
+        res.status(500).send(`Do not have music with id: '${musicId}' in Musics List`);
     }
-    if(Author){
-        music.Author = Author;
-    }
-    if(Singer){
-        music.Singer = Singer;
-    };
-    res.status(200).send(`Music has id ${musicId} was updated!`);
+
 };
 
 exports.deleteMusic = (req, res) => {
     const {musicId} = req.params;
-    // delete musics[{musicId}];
-    musics = musics.filter((music) => music.id !== musicId);
-    res.status(200).send(`Music id ${musicId} was remove from musics list!`);
+    const music = musics.find((music) => music.id === musicId);
+    if(music)
+    {
+        // delete musics[{musicId}];
+        musics = musics.filter((music) => music.id !== musicId);
+        res.status(200).send(`Music id: '${musicId}' was remove from musics list!`);
+    }else{
+        res.status(500).send(`Do not have music with id: '${musicId}' in Musics List`);
+    }
+
 };
